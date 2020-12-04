@@ -1,0 +1,109 @@
+.time-tracking-container {
+  display: flex;
+  // align-items: center;
+  padding: .75rem 1.25rem;
+  border: 1px solid #ccc;
+  border-radius: .5rem;
+  box-shadow: 2px 3px 4px #ddd;
+
+  // made with https://cssgradient.io/
+  // background: rgb(2,0,36);
+  // background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,86,1) 50%, rgba(98,0,125,1) 100%);
+}
+
+.time-tracking-goals-container {
+  margin: 0;
+  padding: 1.25rem;
+  list-style: none;
+
+  .time-tracking-goal-input {
+    width: 150px;
+    margin-bottom: .75rem;
+    padding: 1.25rem;
+    background-color: rgba(255,255,255,0.5);
+    // color: #fafafa;
+    text-align: center;
+    font-family: 'Courier New';
+    font-size: 1.3rem;
+  }
+
+  .time-tracking-remaining-input {
+    width: 150px;
+    padding: 1.25rem;
+    background-color: rgba(255,255,255,0.5);
+    // color: #fafafa;
+    text-align: center;
+    font-family: 'Courier New';
+    font-size: 1.3rem;
+  }
+}
+
+.time-tracking-toggle-button {
+  // background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // width: 45px;
+  // height: 45px;
+  margin: .5rem;
+  padding: 1.5rem;
+  // border: 1px solid #ccc;
+  border-radius: 50%;
+  // box-shadow: 2px 3px 4px #ddd;
+}
+
+.time-tracking-logs-container {
+  margin: 0;
+  padding: 1.25rem;
+  list-style: none;
+}
+
+
+.time-tracking-log {
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace !important;
+  font-size: 1.3rem;
+  margin-bottom: .5rem;
+  list-style: none;
+
+  span {justify-content: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: .5rem .75rem;
+  }
+
+  i {
+    font-size: 10px;
+    margin-right: .5rem;
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+.blink {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

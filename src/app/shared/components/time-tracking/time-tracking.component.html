@@ -1,0 +1,61 @@
+
+<div class="time-tracking-container justify-content-center ">
+  <div class="d-flex flex-row justify-content-center">
+    
+    <div class="time-tracking-goals-container">
+      <div class="time-tracking-log">
+        <span class="badge badge-light" style="font-family: 'Courier New';">
+          <i class="fa"></i>
+          {{ goal }}
+        </span>
+      </div>
+      <hr>
+      <div class="time-tracking-log">
+        <span class="badge badge-light" style="font-family: 'Courier New';">
+          <i class="fa"></i>
+          {{ remaining }}
+        </span>
+      </div>
+<!-- 
+      <input [(ngModel)]="goal" (keyup.enter)="timeRemaining()" class="time-tracking-goal-input form-control" placeholder="Meta (3w 4d 8h)" type="text">
+      <input [(ngModel)]="remaining" class="time-tracking-remaining-input form-control" placeholder="Meta (3w 4d 8h)" disabled type="text"> -->
+    </div>
+
+    <button [ngClass]="{'btn-danger': value === 'working', 'btn-success': value === 'pause' }" 
+        class="d-none btn time-tracking-toggle-button" (click)="toggle()">
+      <i *ngIf="value === 'working'" class="fa fa-pause"></i>
+      <i *ngIf="value === 'pause'" class="fa fa-play"></i>
+    </button>
+
+    <div class="time-tracking-logs-container">
+
+      <div *ngIf="value == 'pause'" (click)="toggle()" class="time-tracking-log">
+        <span class="btn badge badge-light">
+          <i class="fa fa-play"></i> Iniciar
+        </span>
+      </div>
+      <div *ngIf="value == 'working'" (click)="toggle()" class="time-tracking-log">
+        <span class="btn badge badge-light">
+          <i class="fa fa-pause"></i> Pausa
+        </span>
+      </div>
+      <hr>
+      <div *ngFor="let log of merge(); let i = index;" class="time-tracking-log">
+        
+        <span class="badge badge-light" style="font-family: 'Courier New';">
+          <i [ngClass]="{'fa-play text-success': i % 2 == 0, 'fa-pause text-danger': i % 2 == 1 }" class="fa"></i>
+          {{ display(log | date:'hh:mm:ss') }}
+        </span>
+      </div>
+      <!-- <div *ngIf="value == 'working'" class="time-tracking-log">
+        <span class="badge badge-light">
+          <i class="fa fa-play blink"></i>
+          {{ display(now | date:'hh:mm:ss') }}
+        </span>
+      </div> -->
+      <!-- <hr> -->
+      
+
+    </div>
+  </div>
+</div>
